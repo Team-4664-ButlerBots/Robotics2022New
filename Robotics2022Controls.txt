@@ -1,0 +1,19 @@
+Robotics 2022 Controls
+
+Drive
+	Left/Right Joysticks - Tank Drive	Ports 6 and 7
+		
+
+
+Climber
+	Big - extending arm
+		1 motor - extends and contracts, (maybe add an encoder to keep it from overspinning?)	
+	Chungus - holding/swinging arm
+		1 motor - rotates
+
+Collector
+	Collector wheels - Two wheels in opposite direction, keep in holding before it shoots?
+		
+Shooter
+	Shooter Wheel - Rolls ball up "barrel" through to shoot
+		Turn on and off, use collector to push ball to shoot
