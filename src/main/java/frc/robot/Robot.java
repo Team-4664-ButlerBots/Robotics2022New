@@ -15,6 +15,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * project.
  */
 public class Robot extends TimedRobot {
+  Controller cManager = new Controller();
+  Drive actualDrive = new Drive(cManager);
+  FlyWheel actualFlyWheels = new FlyWheel(cManager);
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
@@ -78,7 +81,10 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    actualDrive.operatorDrive();
+    actualFlyWheels.op
+  }
 
   /** This function is called once when the robot is disabled. */
   @Override
