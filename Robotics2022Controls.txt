@@ -6,14 +6,14 @@ Drive
 
 
 Climber
-	Big - extending arm
+	Big - extending arm		Port 5
 		1 motor - extends and contracts, (maybe add an encoder to keep it from overspinning?)	
-	Chungus - holding/swinging arm
+	Chungus - holding/swinging arm	Port 4
 		1 motor - rotates
 
-Collector
-	Collector wheels - Two wheels in opposite direction, keep in holding before it shoots?
+Collector	Port 3
+	Collector wheels - Two wheels in opposite direction, keep in holding before it shoots? Port 3
 		
-Shooter
-	Shooter Wheel - Rolls ball up "barrel" through to shoot
+Shooter		Port 2
+	Shooter Wheel - Rolls ball up "barrel" through to shoot	
 		Turn on and off, use collector to push ball to shoot
