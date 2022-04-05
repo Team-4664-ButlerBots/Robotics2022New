@@ -17,8 +17,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot {
   ControllerManager cManager = new ControllerManager();
   DriveTrain driveTrain = new DriveTrain(cManager);
-  Collector collector = new Collector();
+  Collector collector = new Collector(cManager);
   FlyWheel flyWheel = new FlyWheel(cManager, collector);
+  ClimbArm climbArm = new ClimbArm(cManager);
+  
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
@@ -85,6 +87,8 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     driveTrain.operatorDrive();
     flyWheel.operationalWheels();
+    climbArm.armSpeed();
+    collector.Collect();
   }
  
   /** This function is called once when the robot is disabled. */

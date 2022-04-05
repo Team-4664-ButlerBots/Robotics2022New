@@ -11,7 +11,7 @@ public class ControllerManager {
     private boolean speedToggled = false;
  
     public boolean speedToggle() {
-        if (gamepad.getRawButtonPressed(5)) { // Toggle speed between fast and slow if left bumper (5) is pressed
+        if (gamepad.getRawButtonPressed(5)) { // Toggle drive speed between fast and slow if left bumper (5) is pressed
             if (speedToggled)
                 speedToggled = false;
             else
@@ -67,7 +67,7 @@ public class ControllerManager {
         }
     }*/
  
-    public double getArmInput() {
+    public double getExtendInput() {
         return joystick.getRawAxis(1);
     }
  

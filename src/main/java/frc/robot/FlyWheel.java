@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  
 public class FlyWheel {
-    private Victor shooterMC = new Victor(8);
-    private Encoder Rencoder = new Encoder(2, 1);
-    private Encoder Lencoder = new Encoder(4, 3);
+    private Victor shooterMC = new Victor(2);
+    //private Encoder Rencoder = new Encoder(2, 1);
+    //private Encoder Lencoder = new Encoder(4, 3);
     private double speed = 0;
     private ControllerManager cManager;
     private Collector collector;
