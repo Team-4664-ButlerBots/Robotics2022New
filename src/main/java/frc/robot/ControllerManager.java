@@ -11,7 +11,7 @@ public class ControllerManager {
     private boolean speedToggled = false;
  
     public boolean speedToggle() {
-        if (gamepad.getRawButtonPressed(5)) { // Toggle drive speed between fast and slow if left bumper (5) is pressed
+        if (gamepad.getRawButtonPressed(1)) { // Toggle drive speed between fast and slow if pressed
             if (speedToggled)
                 speedToggled = false;
             else
@@ -36,9 +36,9 @@ public class ControllerManager {
     }
  
     public double collectorInput() {
-        if (joystick.getRawButton(11)) {
+        if (joystick.getRawButton(10)) {
             return -Constants.collectorSpeed;
-        } else if (joystick.getRawButton(10)) {
+        } else if (joystick.getRawButton(11)) {
             return Constants.collectorSpeed;
         } else {
             return 0;
@@ -66,11 +66,36 @@ public class ControllerManager {
             }
         }
     }*/
- 
+/*      Used for joystick arm controls, switching to triggers
     public double getExtendInput() {
-        return joystick.getRawAxis(1);
+        return joystick.getRawAxis(1); 
+
     }
+    public double getRotateInput(){
+        //return joystick.getRawAxis(0);
  
+    
+    }
+*/  public double getExtendInput(){
+        if(joystick.getRawButton(3)&&!joystick.getRawButton(2)){
+           return 1.0; 
+        }
+        if(!joystick.getRawButton(3)&&joystick.getRawButton(2)){
+            return -1.0;
+        }
+            return 0;
+    }
+    
+    public double getRotateInput(){
+        if(joystick.getRawButton(5)&&!joystick.getRawButton(4)){
+           return 1.0; 
+        }
+        if(!joystick.getRawButton(5)&&joystick.getRawButton(4)){
+            return -1.0;
+        }
+            return 0;
+    }
+
     /*public boolean lookAtBall() {
         return gamepad.getRawButton(8);
     }
@@ -79,10 +104,23 @@ public class ControllerManager {
         return gamepad.getRawButton(7);
     }*/
  
-    public double getFlyWheelSpeed() {
-        return (joystick.getRawAxis(2) + 1.0)/2.4;
+    /*public double getFlyWheelSpeed() {        Use for analog speeds for the flywheel on joystick knob
+        return (joystick.getRawAxis(2) + 1.0)/2;
     }
- 
+    */
+    public double getFlyWheelSpeed(){
+        if((joystick.getRawButton(6)||joystick.getRawButton(7))&&!(joystick.getRawButton(6)&&joystick.getRawButton(7))){
+                if(joystick.getRawButton(6)){
+                    return (joystick.getRawAxis(2)+1)*Constants.flywheelFwdSpeed*20;
+                }
+                if(joystick.getRawButton(7)){
+                    return -(joystick.getRawAxis(2)+1)*Constants.flywheelBkwdSpeed*20;
+                }
+
+
+        }
+        return 0;
+    }
     /*private boolean armed = false;
     public boolean getArmed(){
         if(joystick.getRawButtonPressed(3)){

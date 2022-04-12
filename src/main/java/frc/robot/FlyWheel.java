@@ -10,6 +10,8 @@ public class FlyWheel {
     //private Encoder Rencoder = new Encoder(2, 1);
     //private Encoder Lencoder = new Encoder(4, 3);
     private double speed = 0;
+    private boolean forward = true;
+    private double direction = 0;
     private ControllerManager cManager;
     private Collector collector;
  
@@ -21,12 +23,15 @@ public class FlyWheel {
     public void operationalWheels(){
         //speedCheck();
         speed();
+
         //System.out.println(speed);
         shooterMC.set(speed);
     }
- 
-   
+
+
     public void speed(){                                    
+
+
         speed = cManager.getFlyWheelSpeed();
     }
 }

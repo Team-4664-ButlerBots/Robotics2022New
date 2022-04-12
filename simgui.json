@@ -1,0 +1,13 @@
+{
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Ungrouped/DifferentialDrive[1]": "DifferentialDrive",
+      "/LiveWindow/Ungrouped/Victor[2]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Victor[3]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Victor[4]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Victor[5]": "Motor Controller",
+      "/SmartDashboard/Auto choices": "String Chooser"
+    }
+  }
+}
